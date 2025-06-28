@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    /* Fonts */
+    --title: 'EB Garamond', serif;
+    --main-font: 'Roboto', serif
+    
+    /* Utils */
+    --smal-box-shadow: 1px -1px 6px 0 #17191161;
+    --border: 1px solid #00000030;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: white;
+}
+
+/* footer */
+footer {
+    flex-shrink: 0;
+}
+
+/* Header */
+img.logo {
+    width: 5rem;
+}
+
+
+.navbar {
+    background-color: #e9dccb;
+    
+    
+}
+
+a.nav-link {
+    color: black;
+}
+
+
+
