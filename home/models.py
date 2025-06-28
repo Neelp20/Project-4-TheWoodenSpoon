@@ -27,10 +27,11 @@ class MenuItem(models.Model):
     vegetarian = models.BooleanField(default=False)
     vegan = models.BooleanField(default=False)
     gluten_free = models.BooleanField(default=False)
-
+    
     class Meta:
         """Order by type and name"""
         ordering = ['category', 'name']
 
     def __str__(self):
         return str(self.name)
+
