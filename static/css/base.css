@@ -7,7 +7,7 @@
     
     /* Utils */
     --smal-box-shadow: 1px -1px 6px 0 #17191161;
-    --border: 1px solid #00000030;
+    
 }
 
 html, body {
@@ -31,8 +31,18 @@ main {
 
 /* footer */
 footer {
+    background-color: #e9dccb;
     flex-shrink: 0;
 }
+
+footer a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+/* footer a i:hover {
+    font-size: 2rem;
+} */
 
 /* Header */
 img.logo {
@@ -42,8 +52,7 @@ img.logo {
 
 .navbar {
     background-color: #e9dccb;
-    
-    
+     
 }
 
 a.nav-link {
