@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav me-2 mb-2">
         <li class="nav-item">
-          <a class="nav-link {% if request.path == 'home' %}active{% endif %}" 
+          <a class="nav-link {% if request.path == 'home_url' %}active{% endif %}" 
           aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
@@ -24,12 +24,12 @@
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link {% if request.path == Logout %}active{% endif %}" 
+          <a class="nav-link {% if request.path == logout_url %}active{% endif %}" 
           aria-current="page" href="{% url 'account_logout' %}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link {% if request.path == Signup %}active{% endif %}"
+          <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
           aria-current="page" href="{% url 'account_signup' %}">Register</a>
         </li>
         <li class="nav-item">

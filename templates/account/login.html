@@ -1,8 +1,61 @@
-{% extends "account/base.html" %} {% load i18n %} 
+{% extends "base.html" %} {% load i18n %} 
 {% block title %}{% trans "Sign In" %}
 {% endblock %} 
 {% block content %}
-<div class="container text-center">
+<!-- method 1 -->
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 w-100" style="max-width: 400px;">
+    <h1 class="text-center">{% trans "Sign In" %}</h1>
+    <p class="text-center">
+      {% blocktrans %}If you have not created an account yet, then please
+      <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+    </p>
+    <form method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button type="submit" class="btn btn-primary w-100 mb-2 ">{% trans "Sign In" %}</button>
+      <a class="d-block text-center" href="{% url 'account_reset_password' %}">
+        {% trans "Forgot Password?" %}
+      </a>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- method 2 -->
+<!-- <div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4 w-100" style="max-width: 400px;">
+    <h1 class="text-center mb-3">{% trans "Sign In" %}</h1>
+
+    <p class="text-center">
+      {% blocktrans %}If you have not created an account yet, then please
+      <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+    </p>
+
+    <form method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button class="btn btn-primary w-100 mb-2" type="submit">
+        {% trans "Sign In" %}
+      </button>
+      <a class="text-center d-block" href="{% url 'account_reset_password' %}">
+        {% trans "Forgot Password?" %}
+      </a>
+    </form>
+  </div>
+</div> -->
+
+
+
+<!-- 
+<div class="container text-center bg-colour">
   <h1>{% trans "Sign In" %}</h1>
 
   <p>
@@ -10,7 +63,7 @@
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
   </p>
 
-  <form class="form p-2" method="POST" action="{% url 'account_login' %}">
+    <form class="form p-2" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %} {{ form|crispy }} {% if redirect_field_value %}
     <input
       type="hidden"
@@ -28,4 +81,5 @@
     >
   </form>
 </div>
+ -->
 {% endblock content %}

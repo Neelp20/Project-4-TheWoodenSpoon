@@ -59,10 +59,21 @@ a.nav-link {
     color: black;
 }
 
-.active {
+/* .active {
     border-bottom: 2px solid blue;
     
+} */
+
+/* login.html */
+.btn-signup {
+    background-color: blue;
 }
 
+/* .bg-colour {
+    background-color: #e9dccb;
+} */
 
+/* body {
+  background-color: red;
+} */
 
