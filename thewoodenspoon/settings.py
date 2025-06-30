@@ -28,7 +28,7 @@ if os.path.exists('env.py'):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1',]
 
@@ -59,6 +59,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -139,9 +140,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# We are not using email verification in this project, 
+# We are not using email verification in this project,
 # so this line informs Django not to expect it. 
-# Without this line, you would get Internal Server errors 
+# Without this line, you would get Internal Server errors
 # (code 500) during login and registration. this line was in codestar blog
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
