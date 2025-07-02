@@ -61,7 +61,8 @@ a.nav-link {
 
 /* homepage */
 .hero-image {
-    background-image: url('../images/hero-image.webp');
+    /* background-image: url('../images/hero-image.webp'); */
+    background-image: url('/static/images/hero-image.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

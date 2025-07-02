@@ -1,4 +1,6 @@
 from django.db import models
+# from django.contrib.auth.models import User
+# from django_summernote.admin import SummernoteModelAdmin
 # from cloudinary.models import CloudinaryField
 
 # Create your models here.
