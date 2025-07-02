@@ -79,8 +79,24 @@ a.nav-link {
   z-index: 1;
 }
 
+.card.ope-times ul {
+    list-style-type: none;
+}
 
+.card.ope-times ul li {
+    border-bottom: 1px dashed #ddd;
+    padding: 0.25rem 0;
+}
 
+.card .getin-touch {
+    padding: 0.25rem 0;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  
+}
 /* .active {
     border-bottom: 2px solid blue;
     
