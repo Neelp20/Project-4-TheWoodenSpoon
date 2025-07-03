@@ -2,50 +2,123 @@
 
 <header>
   {% with request.resolver_match.url_name as url_name %}
-    <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <!-- Logo -->
-    <a class="navbar-brand" href="#"><img src="{% static 'images/logo.webp' %}" 
-      alt="The Wooden Spoon Logo" class="logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-    aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Navigation items -->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav me-2 mb-2">
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == 'home_url' %}active{% endif %}" 
-          aria-current="page" href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == 'menu_url' %}active{% endif %}" 
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="{% url 'home' %}"
+        ><img
+          src="{% static 'images/logo.webp' %}"
+          alt="The Wooden Spoon Logo"
+          class="logo"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navigation items -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-2 mb-2">
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'home' %}active{% endif %}"
+              aria-current="page"
+              href="{% url 'home' %}"
+              >Home</a
+            >
+          </li>
+          <!-- <li class="nav-item">
+          <a class="nav-link {% if url_name == 'menu' %}active{% endif %}" 
           aria-current="page" href="{% url 'menu' %}">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == 'bookings_url' %}active{% endif %}" 
-          aria-current="page" href="{% url 'bookings' %}">Bookings</a>
-        </li>
-        {% if request.user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == logout_url %}active{% endif %}" 
-          aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
-          aria-current="page" href="{% url 'account_signup' %}">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% if request.path == login_url %}active{% endif %}"
-           aria-current="page" href="{% url 'account_login' %}">Login</a>
-        </li>
-        {% endif %}
-      </ul>
-      
+        </li> -->
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'bookings' %}active{% endif %}"
+              aria-current="page"
+              href="{% url 'bookings' %}"
+              >Bookings</a
+            >
+          </li>
+          <!-- Conditional staff dropdown -->
+          {% if user.is_staff %}
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="staffOptions"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Menus
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="staffOptions">
+              <li>
+                <a class="dropdown-item" href="{% url 'menus' %}">View Menu</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'createmenu' %}"
+                  >Create Menu</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'create_menu_item' %}"
+                  >Create Menu Item</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'managemenus' %}"
+                  >Manage Menu items</a
+                >
+              </li>
+            </ul>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'menu' %}active{% endif %}"
+              aria-current="page"
+              href="{% url 'menu' %}"
+              >Menu</a
+            >
+          </li>
+          {% endif %} 
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
+              aria-current="page"
+              href="{% url 'account_logout' %}"
+              >Logout</a
+            >
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'account_signup' %}active{% endif %}"
+              aria-current="page"
+              href="{% url 'account_signup' %}"
+              >Register</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'account_login' %}active{% endif %}"
+              aria-current="page"
+              href="{% url 'account_login' %}"
+              >Login</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-{% endwith %}
+  </nav>
+  {% endwith %}
 </header>
