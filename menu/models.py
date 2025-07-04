@@ -16,32 +16,22 @@ class Menu(models.Model):
         ordering = ['name']
 
     def __str__(self):
-        return str(self.name)
+        return self.name
 
 
-ALLERGY_LABELS = (
-    ("contains dairy", "Contains Dairy"),
-    ("contains nuts", "Contains Nuts"),
-    ("vegetarian", "Vegetarian"),
-    ("vegan", "Vegan"),
-    ("gluten free", "Gluten Free")
+# ALLERGY_LABELS = (
+#     ("contains dairy", "Contains Dairy"),
+#     ("contains nuts", "Contains Nuts"),
+#     ("vegetarian", "Vegetarian"),
+#     ("vegan", "Vegan"),
+#     ("gluten free", "Gluten Free")
     
-)
+# )
 
 
-class AllergyLabels(models.Model):
+class AllergyLabel(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    allergy_labels = models.CharField(
-        max_length=50,
-        choices=ALLERGY_LABELS,
-        default=None
-    )
-    contains_dairy = models.BooleanField(default=False)
-    contains_nuts = models.BooleanField(default=False)
-    vegetarian = models.BooleanField(default=False)
-    vegan = models.BooleanField(default=False)
-    gluten_free = models.BooleanField(default=False)
-    
+
     def __str__(self):
         return self.name
 
@@ -57,7 +47,7 @@ MENU_CATEGORIES = (
 )
 
 
-class CreateMenuItem (models.Model):
+class MenuItem (models.Model):
     """Models to create menu items"""
     menu = models.ForeignKey(
         Menu, related_name='items', on_delete=models.CASCADE
@@ -68,7 +58,8 @@ class CreateMenuItem (models.Model):
         choices=MENU_CATEGORIES,
         default='starter'
     )
-
+    allergy_labels = models.ManyToManyField(
+         AllergyLabel, related_name='menu_items', blank=True)
     description = models.TextField(default="")
     price = models.FloatField(default=0.00)
 
@@ -77,4 +68,4 @@ class CreateMenuItem (models.Model):
         ordering = ['category', 'title']
 
     def __str__(self):
-        return str(self.name)
+        return self.title

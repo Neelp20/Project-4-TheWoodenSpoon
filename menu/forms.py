@@ -1,5 +1,5 @@
 from django import forms
-from .models import Menu, CreateMenuItem, AllergyLabels
+from .models import Menu, MenuItem, AllergyLabel
 
 
 class MenuForm(forms.ModelForm):
@@ -12,22 +12,26 @@ class MenuForm(forms.ModelForm):
             ]
 
 
-class CreateMenuItemForm(forms.ModelForm):
+class MenuItemForm(forms.ModelForm):
     class Meta:
-        model = CreateMenuItem
+        model = MenuItem
         fields = [
             'menu',
             'title',
             'category',
             'description',
-            'price'
+            'price',
+            'allergy_labels'
             
             ]
+        widgets = {
+            'allergy_labels': forms.CheckboxSelectMultiple
+        }
         
 
 class AllergyLabelsForm(forms.ModelForm):
     class Meta:
-        model = AllergyLabels
-        fields = {
-            'allergy_labels'
-        }
+        model = AllergyLabel
+        fields = [
+            'name'
+        ]
