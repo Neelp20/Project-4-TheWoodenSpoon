@@ -7,8 +7,44 @@
 
 {% block content %}
 
-<h1>Hello Menu Page</h1>
+{% for category_label, items in grouped_menu.items %}
+  <h2>{{ category_label }}</h2>
+  <div class="menu-section">
+    {% for item in items %}
+      <div class="menu-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <p><strong>£{{ item.price }}</strong></p>
+        <div class="labels">
+          {% for label in item.allergy_labels.all %}
+            <span class="badge allergy">{{ label.name }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+<!-- {% for item in items %}
+  <div class="menu-card">
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+    <p>Price: £{{ item.price }}</p>
+    <div class="labels">
+      {% for label in item.allergy_labels.all %}
+        <span class="badge allergy">{{ label.name }}</span>
+      {% endfor %}
+    </div>
+  </div>
+{% empty %}
+  <p>No menu items available at the moment.</p>
+{% endfor %} -->
+
 
 <!-- contents -->
  
-{%endblock%}

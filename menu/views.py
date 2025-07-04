@@ -1,7 +1,7 @@
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.utils.decorators import method_decorator
 from django.contrib.admin.views.decorators import staff_member_required
-from .models import Menu, MenuItem, AllergyLabel
+from .models import Menu, MenuItem, AllergyLabel, MENU_CATEGORIES
 from django.contrib import messages
 from django.urls import reverse_lazy
 from menu.forms import MenuForm, MenuItemForm, AllergyLabelsForm
@@ -11,7 +11,13 @@ from django.shortcuts import render
 
 
 def menu_view(request):
-    return render(request, 'menu/menu.html')
+    # return render(request, 'menu/menu.html')
+    items = MenuItem.objects.prefetch_related('allergy_labels')
+    grouped_menu = {
+        label: [item for item in items if item.category == key]
+        for key, label in MENU_CATEGORIES
+    }
+    return render(request, 'menu/menu.html', {'grouped_menu': grouped_menu})
 
 
 @method_decorator(staff_member_required, name='dispatch')
@@ -55,8 +61,6 @@ class CreateAllergyLabelsView(CreateView):
 @method_decorator(staff_member_required, name='dispatch')
 class DeleteMenuItemView(DeleteView):
     model = MenuItem
-    # form_class = ManageMenuItemForm
-    # template_name = 'menu/manage_menu.html'
     template_name = 'menu/delete_menu_item.html'
     success_url = reverse_lazy('menu')
 

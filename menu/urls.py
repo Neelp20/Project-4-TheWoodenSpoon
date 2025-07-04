@@ -9,7 +9,7 @@ urlpatterns = [
     path('create_menu_item/', views.CreateMenuItemsView.as_view(),
          name='create_menu_item'),
     path('createmenuitem/', views.CreateAllergyLabelsView.as_view(),
-         name='createmenuitems'),
+         name='create_menu_items'),
     path('deletemenuitem/', views.DeleteMenuItemView.as_view(),
          name='deletemenuitems'),
     path('editmenu/', views.EditMenuItemView.as_view(),

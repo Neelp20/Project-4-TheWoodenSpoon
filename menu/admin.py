@@ -1,5 +1,5 @@
 from django.contrib import admin
-# from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Menu, MenuItem
 
 # Register your models here.
@@ -17,10 +17,16 @@ class MenuAdmin(admin.ModelAdmin):
 
 
 @admin.register(MenuItem)
-class MenuItemAdmin(admin.ModelAdmin):
+class MenuItemAdmin(SummernoteModelAdmin):
     """Lists field to display menu items"""
     list_display = ('title', 'category', 'price')
     filter_horizontal = ['allergy_labels']
+
+
+# class MenuItemAdmin(SummernoteModelAdmin):
+#     summernote_fields = ('description',)
+
+# admin.site.register(MenuItem, MenuItemAdmin)
 
 
 # @admin.register(AllergyLabel)

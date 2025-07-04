@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'menu/css/menu/menu.css' %}">
+{% endblock %}
+
+{% for item in menu_items %}
+  <div class="menu-item-card">
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+
+    <!-- Allergy Labels -->
+    <div class="allergy-labels">
+      {% for label in item.allergy_labels.all %}
+        <span class="badge allergy">{{ label.name }}</span>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
