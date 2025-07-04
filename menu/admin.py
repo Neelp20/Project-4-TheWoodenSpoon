@@ -1,6 +1,6 @@
 from django.contrib import admin
 # from django_summernote.admin import SummernoteModelAdmin
-from .models import Menu, AllergyLabel, MenuItem
+from .models import Menu, MenuItem
 
 # Register your models here.
 
