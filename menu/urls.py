@@ -17,5 +17,4 @@ urlpatterns = [
     path('manage/', views.ManageMenuView.as_view(),
          name='managemenus')
 
-
 ]

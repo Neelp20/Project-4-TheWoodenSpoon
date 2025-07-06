@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    /* Fonts */
+    --title: 'EB Garamond', serif;
+    --main-font: 'Roboto', serif
+    
+    /* Utils */
+    --smal-box-shadow: 1px -1px 6px 0 #17191161;
+    
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: white;
+}
+
+/* footer */
+footer {
+    background-color: #e9dccb;
+    flex-shrink: 0;
+}
+
+footer a {
+    color: black;
+    font-size: 1.5rem;
+}
+
+/* footer a i:hover {
+    font-size: 2rem;
+} */
+
+/* Header */
+img.logo {
+    width: 5rem;
+}
+
+
+.navbar {
+    background-color: #e9dccb;
+     
+}
+
+a.nav-link {
+    color: black;
+}
+
+/* homepage */
+.hero-image {
+    /* background-image: url("../images/hero-image.f6f283084b08.webp"); */
+    background-image: url("/static/images/hero-image.f6f283084b08.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    position: relative;
+}
+
+.hero-image::before {
+  content: "";
+  /* position: absolute; */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Adjust darkness */
+  z-index: 1;
+}
+
+.card.ope-times ul {
+    list-style-type: none;
+}
+
+.card.ope-times ul li {
+    border-bottom: 1px dashed #ddd;
+    padding: 0.25rem 0;
+}
+
+.card .getin-touch {
+    padding: 0.25rem 0;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  
+}
+
+.bg-card {
+    background-color: #ebc4a0;
+    border-style: none;
+}
+
+/* login.html */
+.btn-signup {
+    background-color: blue;
+}
+
+
+
+
+

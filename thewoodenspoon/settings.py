@@ -28,7 +28,7 @@ if os.path.exists('env.py'):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1',]
 
@@ -180,6 +180,22 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+SUMMERNOTE_CONFIG = {
+    # 'iframe': False,  # Use inline editor instead of iframe (helps with dark theme compatibility)
+    'summernote': {
+        'width': '100%',
+        'height': '300px',
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview']],
+        ],
+    },
+}
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

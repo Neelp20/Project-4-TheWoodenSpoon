@@ -21,6 +21,7 @@ class MenuItemAdmin(SummernoteModelAdmin):
     """Lists field to display menu items"""
     list_display = ('title', 'category', 'price')
     filter_horizontal = ['allergy_labels']
+    summernote_fields = ('description',)
 
 
 # class MenuItemAdmin(SummernoteModelAdmin):

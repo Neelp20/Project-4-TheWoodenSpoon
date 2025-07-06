@@ -1,50 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load static %}
 
+{% block extra_css %}
+<!-- Include base CSS and Bootstrap manually because base.html only puts Bootstrap inside the block -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+ <!-- base.css -->
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<!-- menu specific css -->
 <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
-
+{% endblock %}
 
 {% block content %}
+<section id="menu-page" class="menu-wrapper">
+  <div class="menu-grid">
+    {% for category_label, items in grouped_menu.items %}
+      <div class="category-box">
+        <h2 class="category-title">{{ category_label }}</h2>
 
-{% for category_label, items in grouped_menu.items %}
-  <h2>{{ category_label }}</h2>
-  <div class="menu-section">
-    {% for item in items %}
-      <div class="menu-card">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-        <p><strong>£{{ item.price }}</strong></p>
-        <div class="labels">
-          {% for label in item.allergy_labels.all %}
-            <span class="badge allergy">{{ label.name }}</span>
-          {% endfor %}
-        </div>
+        {% for item in items %}
+          <article class="menu-card">
+            <header class="menu-card__head">
+              <h3 class="item-title">{{ item.title }}</h3>
+              <span class="item-price">£{{ item.price|floatformat:2 }}</span>
+            </header>
+
+            <p class="item-desc">{{ item.description|safe }}</p>
+
+            {% if item.allergy_labels.exists %}
+              <ul class="item-labels">
+                {% for label in item.allergy_labels.all %}
+                  <li>{{ label.name }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </article>
+        {% endfor %}
       </div>
     {% endfor %}
   </div>
-{% endfor %}
-
-
+</section>
 {% endblock %}
 
-
-
-<!-- {% for item in items %}
-  <div class="menu-card">
-    <h3>{{ item.title }}</h3>
-    <p>{{ item.description }}</p>
-    <p>Price: £{{ item.price }}</p>
-    <div class="labels">
-      {% for label in item.allergy_labels.all %}
-        <span class="badge allergy">{{ label.name }}</span>
-      {% endfor %}
-    </div>
-  </div>
-{% empty %}
-  <p>No menu items available at the moment.</p>
-{% endfor %} -->
-
-
-<!-- contents -->
  
