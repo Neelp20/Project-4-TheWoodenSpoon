@@ -1,5 +1,73 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Reserve a table{% endblock %}
+
 {% block content %}
-<!-- contents -->
+<!-- booking specific css -->
+<link rel="stylesheet" href="{% static 'bookings/css/booking.css' %}">
+
+<div class="booking-container">
+  <div class="booking-info text-center pt-5">
+    <h2>RESERVE A TABLE</h2>
+    <p>You can fill this form in to book your table. <br>
+        table will be booked automatically, <br>
+         and you will receive a confirmation email. <br>
+         If there is any issue, we will contact you as soon as possible.</p>
+    <p><strong>For same-day bookings:</strong> <br>
+        please call us directly on <br> <a href="tel:01162422240">0116 112 1122</a> or <br>
+        <a href="tel:01162628221">0116 113 1133</a></p>
+    <p>If you make a reservation for the same day via this form, it may not be valid. <br>
+        The automatic confirmation email will also be invalid <br> when making a reservation for the same day. <br>
+        Since we need atleast <strong>24hour prior reservation.</strong></p>
+    <p class="text-center">
+      If you have not created an account yet, then please
+      <a href="{{ signup_url }}">sign up</a> first.
+    </p>
+  </div>
+
+  <div class="booking-form">
+    <form method="POST">
+      {% csrf_token %}
+      <label>Your name *</label>
+      <input type="text" name="name" required>
+
+      <label>Your email *</label>
+      <input type="email" name="email" required>
+
+      <label>Your mobile *</label>
+      <input type="tel" name="phone" required>
+
+      <label>DATE</label>
+      <input type="date" name="date">
+
+      <label>TIME</label>
+      <select name="time">
+        <option value="">—Please choose an option—</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="19:00">19:00</option>
+        <!-- add more time slots -->
+      </select>
+
+      <label>Number of people *</label>
+      <input type="number" name="party_size" min="1" required>
+
+      <label>Any Message</label>
+      <textarea class="form-control sharp-corner" placeholder="Please let us know"></textarea>
+
+      <!-- <label>Celebrating a special occasion? *</label>
+      <select name="occasion" required>
+        <option value="">—Please choose—</option>
+        <option value="birthday">Birthday</option>
+        <option value="anniversary">Anniversary</option>
+        <option value="other">Other</option>
+      </select> -->
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
+
 
 {%endblock%}
