@@ -37,26 +37,49 @@
         {% endfor %}
       </ul>
       {% endif %}
+
       <label>Your name*</label>
       {{ form.name }}
+      {% for error in form.name.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
 
       <label>Your email*</label>
       {{ form.email }}
+      {% for error in form.email.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
 
       <label>Your mobile*</label>
       {{ form.phone }}
+      {% for error in form.phone.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
 
       <label>Date*</label>
       {{ form.date }}
+      {% for error in form.date.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
 
       <label>Time*</label>
       {{ form.time }}
+      {% for error in form.time.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
 
       <label>Number of people*</label>
       {{ form.party_size }}
+      {% for error in form.party_size.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
 
       <label>Any Message</label>
       {{ form.message }}
+      {% for error in form.message.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+      
       <button type="submit">Send</button>
     </form>
   </div>
