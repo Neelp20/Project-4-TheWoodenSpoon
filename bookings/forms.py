@@ -22,7 +22,8 @@ class BookingForm(forms.ModelForm):
             "date": forms.DateInput(attrs={"type": "date"}),
             "time": forms.Select(choices=Booking.TIME_CHOICES),
             'message': forms.Textarea(
-                attrs={'placeholder': 'Any message please let us know'}
+                attrs={'placeholder': 'Any message please let us know',
+                       'rows': 3}
                 ),
         }
 

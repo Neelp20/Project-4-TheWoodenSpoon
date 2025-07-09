@@ -64,8 +64,8 @@
 .booking-form input,
 .booking-form select,
 .booking-form textarea {
-  padding: 8px;
-  margin-top: 5px;
+  padding: 2px;
+  margin-top: 4px;
   background-color: #1c1c1c;
   border: 1px solid #f5e1b9;
   color: #fff;
@@ -80,7 +80,7 @@
 
 .booking-form button {
   margin-top: 25px;
-  padding: 15px;
+  padding: 5px;
   background-color: #f5e1b9;
   color: #111;
   font-weight: bold;
@@ -94,6 +94,23 @@
   background-color: #ffe29d;
   box-shadow: 0 0 10px #f5e1b9;
 }
+
+ul.django-messages {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+ul.django-messages li.success {
+  background: #d1e7dd;
+  color: #0f5132;
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+ul.django-messages li.error {
+  background: #f8d7da;
+  color: #842029;
+}
+
 
 /* media queries */
 
