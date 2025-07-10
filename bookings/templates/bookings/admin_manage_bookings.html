@@ -41,7 +41,7 @@
           <tr>
             <td>{{ booking.date }}</td>
             <td>{{ booking.time }}</td>
-            <td>Table {{ booking.table.number }}</td>
+            <td>{{ booking.table.number }}</td>
             <td>{{ booking.name }}
                {% if booking.user.is_staff %}
             <span class="badge bg-warning text-dark ms-2">Admin</span>

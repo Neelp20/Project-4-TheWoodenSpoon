@@ -50,7 +50,7 @@ class CreateMenuItemsView(CreateView):
 class CreateAllergyLabelsView(CreateView):
     model = AllergyLabel
     form_class = AllergyLabelsForm
-    template_name = 'menu/createmenu_items.html'
+    template_name = 'menu/create_allergy_label.html'
     success_url = reverse_lazy('menu')
 
     def form_valid(self, form):
@@ -62,21 +62,22 @@ class CreateAllergyLabelsView(CreateView):
 class DeleteMenuItemView(DeleteView):
     model = MenuItem
     template_name = 'menu/delete_menu_item.html'
-    success_url = reverse_lazy('menu')
+    success_url = reverse_lazy('managemenus')
 
     def form_valid(self, form):
-        messages.success(self.request, 'Items deleted successfully')
+        messages.success(self.request, 'Menu item deleted successfully')
         return super().form_valid(form)
 
 
 @method_decorator(staff_member_required, name='dispatch')
 class EditMenuItemView(UpdateView):
-    model = Menu
+    model = MenuItem
+    form_class = MenuItemForm
     template_name = 'menu/edit_menu.html'
-    success_url = reverse_lazy('menu')
+    success_url = reverse_lazy('managemenus')
 
     def form_valid(self, form):
-        messages.success(self.request, 'Edited successfully')
+        messages.success(self.request, 'Menu item updated successfully')
         return super().form_valid(form)
     
 
@@ -89,6 +90,8 @@ class ManageMenuView(ListView):
 
     def get_queryset(self):
         return MenuItem.objects.select_related(
-            'menu', 'category').prefetch_related(
-                'allergy_labels').order_by(
-                    'menu', 'category', 'title')
+            'menu'
+            ).prefetch_related(
+                'allergy_labels'
+                ).order_by(
+                    'category', 'title')
