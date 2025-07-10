@@ -37,7 +37,13 @@ class BookingCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.table = form.cleaned_data["table_obj"]
-        messages.success(self.request, "Booking created successfully.")
+    
+        # Clear any existing messages before adding a new one
+        storage = messages.get_messages(self.request)
+        existing = [msg.message for msg in storage]
+        if "Booking created successfully." not in existing:
+            messages.success(self.request, "Booking created successfully.")
+        
         return super().form_valid(form)
 
 

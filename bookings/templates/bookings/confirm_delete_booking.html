@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
+{% block title %}Cancel Booking{% endblock %}
+
 {% block content %}
-<!-- contents -->
-<!-- 	Confirm cancellation message -->
-{%endblock%}
+<div class="container py-5 text-center">
+  <h2>Are you sure you want to cancel this booking?</h2>
+  <p><strong>{{ object.name }}</strong> on <strong>{{ object.date }}</strong> at <strong>{{ object.time }}</strong></p>
+  <p>Table {{ object.table.number }} for {{ object.party_size }} people</p>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    <a href="{% url 'manage-bookings' %}" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+  </form>
+</div>
+{% endblock %}
+
+
+
