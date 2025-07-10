@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Your Upcoming Bookings{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4">Your Upcoming Bookings</h2>
+
+  {% if bookings %}
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Table</th>
+            <th>Guests</th>
+            <th>Message</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for booking in bookings %}
+          <tr>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.time }}</td>
+            <td>Table {{ booking.table.table_number }}</td>
+            <td>{{ booking.party_size }}</td>
+            <td>{{ booking.message|default:"—" }}</td>
+            <td>
+              <a href="{% url 'edit-booking' booking.pk %}" class="btn btn-sm btn-primary">Edit</a>
+              <a href="{% url 'delete-booking' booking.pk %}" class="btn btn-sm btn-danger">Cancel</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <p class="text-center">You have no upcoming bookings.</p>
+  {% endif %}
+
+  <div class="text-center mt-4">
+    <a href="{% url 'bookings' %}" class="btn btn-success">Make a New Booking</a>
+    <a href="{% url 'past-bookings' %}" class="btn btn-secondary">View Past Bookings</a>
+  </div>
+</div>
+{% endblock %}

@@ -20,12 +20,16 @@
     <p>If you make a reservation for the same day via this form, it may not be valid. <br>
         The automatic confirmation email will also be invalid <br> when making a reservation for the same day. <br>
         Since we need atleast <strong>24hour prior reservation.</strong></p>
-    <p class="text-center">
-      If you have not created an account yet, then please
-      <a href="{{ signup_url }}">sign up</a> first.
+
+    {% if not user.is_authenticated %}
+    <p class="text-center text-danger fw-bold">
+      You must <a href="{{ login_url }}">log in</a> or
+      <a href="{{ signup_url }}">sign up</a> to book a table.
     </p>
+    {% endif %}
   </div>
 
+  {% if user.is_authenticated %}
   <div class="booking-form">
     {% if messages %}
     <ul class="django-messages">
@@ -91,6 +95,7 @@
       <button type="submit">Send</button>
     </form>
   </div>
+  {% endif %}
 </div>
 
 {%endblock%}

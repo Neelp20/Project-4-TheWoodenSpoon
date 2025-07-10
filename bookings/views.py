@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.db.models import Q
+from .models import Table
 from .models import Booking
 from .forms import BookingForm
 
@@ -21,11 +22,17 @@ class BookingListView(LoginRequiredMixin, ListView):
         ).order_by("date", "time")
 
 
-class BookingCreateView(CreateView):
+class BookingCreateView(LoginRequiredMixin, CreateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/bookings.html"
     success_url = reverse_lazy("manage-bookings")
+    login_url = "account_login"
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs["user"] = self.request.user
+        return kwargs
 
     def form_valid(self, form):
         form.instance.user = self.request.user
