@@ -111,6 +111,14 @@ ul.django-messages li.error {
   color: #842029;
 }
 
+/* edit_booking page */
+.errorlist {
+  color: red;
+  font-weight: bold;
+  list-style: none;
+  padding: 10px 0;
+}
+
 
 /* media queries */
 

@@ -1,5 +1,81 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Edit Booking{% endblock %}
+
 {% block content %}
-<!-- contents -->
-<!-- Form for updating -->
-{%endblock%}
+<link rel="stylesheet" href="{% static 'bookings/css/booking.css' %}">
+
+<div class="booking-container">
+  <div class="booking-info text-center pt-5">
+    <h2>EDIT YOUR BOOKING</h2>
+    <p>You can edit your existing reservation here. Make sure the date and time are available.</p>
+  </div>
+
+  <div class="booking-form">
+    {% if messages %}
+      <ul class="django-messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+        <ul class="errorlist">
+          {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <label>Your name*</label>
+      {{ form.name }}
+      {% for error in form.name.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+
+      <label>Your email*</label>
+      {{ form.email }}
+      {% for error in form.email.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+
+      <label>Your mobile*</label>
+      {{ form.phone }}
+      {% for error in form.phone.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+
+      <label>Date*</label>
+      {{ form.date }}
+      {% for error in form.date.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+
+      <label>Time*</label>
+      {{ form.time }}
+      {% for error in form.time.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+
+      <label>Number of people*</label>
+      {{ form.party_size }}
+      {% for error in form.party_size.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+
+      <label>Any Message</label>
+      {{ form.message }}
+      {% for error in form.message.errors %}
+        <div class="errorlist">{{ error }}</div>
+      {% endfor %}
+
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
