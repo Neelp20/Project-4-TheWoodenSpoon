@@ -82,7 +82,7 @@ class AdminBookingListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     context_object_name = "bookings"
 
     def test_func(self):
-        return self.request.user.is_superuser
+        return self.request.user.is_staff
 
     def get_queryset(self):
         queryset = Booking.objects.filter(
