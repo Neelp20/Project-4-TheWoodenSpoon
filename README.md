@@ -140,3 +140,38 @@ Tasks:
 * Ability to perform CRUD functionality on Menu and Bookings
 * Restricted role based features
 * Home page with restaurant information
+
+## The-Structure-Plane
+
+### Features
+
+``USER STORY - As a developer, I need to create the navbar so that users can navigate the website from any device``
+
+Implementation:
+
+**Navigation Menu**
+
+ The Navigation contains links for Home, Menu, Bookings and has allauth options.
+
+ The following navigation items are available on all pages:
+  * Home -> index.html - Visible to all
+  * Bookings (Drop Down):
+    * Create Booking -> bookings.html - Visible to logged in users
+    * Upcoming BookingS -> manage_bookings.html - Visible to logged in users
+    * Past BookingS -> past_bookings.html - Visible to logged in users
+    * All Bookings(Admin) --> admin_manage_bookings.html - visible to admin only
+  * Menus (Drop Down):
+    * View Menus -> menu.html - Visible to all
+    * Create Menu -> create_menu.html - Visible to staff
+    * Create Menu Item -> create_menu_items.html - Visible to staff
+    * Create Allergy Label -> create_allergy_label.html - Visible to staff
+    * Manage Menu -> manage_menu.html - Visible to staff
+  * Login -> login.html - Visible to logged out users
+  * Register -> signup.html - Visible to logged out users
+  * Logout -> logout.html - Visible to logged in users
+
+The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices.
+
+![Navbar](docs/readme_images/navbar1.webp)
+![Navbar](docs/readme_images/navbar2.webp)
+![Navbar](docs/readme_images/navbar3.webp)
