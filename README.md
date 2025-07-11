@@ -132,3 +132,11 @@ Tasks:
 
 * Complete readme documentation
 * Complete testing documentation write up
+
+## The-Scope-Plane
+
+* Responsive Design - Site should be fully functional on all devices from 320px up
+* Hamburger menu for mobile devices
+* Ability to perform CRUD functionality on Menu and Bookings
+* Restricted role based features
+* Home page with restaurant information
