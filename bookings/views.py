@@ -4,8 +4,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.db.models import Q
-from .models import Table
-from .models import Booking
+from .models import Booking, Table
 from .forms import BookingForm
 
 
@@ -47,33 +46,41 @@ class BookingCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class BookingUpdateView(LoginRequiredMixin, UpdateView):
+class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Booking
     form_class = BookingForm
     template_name = "bookings/edit_booking.html"
     success_url = reverse_lazy("manage-bookings")
 
-    def get_queryset(self):
-        return Booking.objects.filter(user=self.request.user)
-
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.instance.user = self.get_object().user
         form.instance.table = form.cleaned_data["table_obj"]
         messages.success(self.request, "Booking updated successfully.")
         return super().form_valid(form)
+    
+    def test_func(self):
+        """ Test user is staff or allow only owner of the booking """
+        if self.request.user.is_staff:
+            return True
+        else:
+            return self.request.user == self.get_object().user
 
 
-class BookingDeleteView(LoginRequiredMixin, DeleteView):
+class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Booking
     template_name = "bookings/confirm_delete_booking.html"
     success_url = reverse_lazy("manage-bookings")
 
-    def get_queryset(self):
-        return Booking.objects.filter(user=self.request.user)
-
     def delete(self, request, *args, **kwargs):
         messages.success(request, "Booking cancelled successfully.")
         return super().delete(request, *args, **kwargs)
+    
+    def test_func(self):
+        """ Test user is staff or allow only owner of the booking """
+        if self.request.user.is_staff:
+            return True
+        else:
+            return self.request.user == self.get_object().user
 
 
 class PastBookingListView(LoginRequiredMixin, ListView):
