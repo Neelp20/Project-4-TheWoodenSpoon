@@ -26,3 +26,35 @@ All projects were assigned to epics, prioritized under the labels, Must have, sh
 The Kanban board was created using github projects and can be located [here](https://github.com/users/Neelp20/projects/17/views/1) and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
 
 ![Kanban image](docs/readme_images/kanban.webp)
+
+#### Epics
+
+The project had 7 main Epics (milestones):
+
+**EPIC 1 - Base Setup**
+
+The base setup epic is for all stories needed for the base set up of the application. Without the base setup, the app would not be possible so it was the first epic to be delivered as all other features depend on the completion of the base setup.
+
+**EPIC 2 - Stand alone Pages**
+
+The stand alone pages epic is for small pages that did not have enough stories to warrant their own full epics. Instead of creating epics for tiny features, these small deliverables were all added under this epic.
+
+**EPIC 3 - Authentication Epic**
+
+The authentication epic is for all stories related to the registration, login and authorization of views. This epic provides critical functionality and value as without it the staff would not be able to managed the bookings securely without regular site visitors also being able to see and perform actions.
+
+**EPIC 4 - Menu**
+
+The menu epic is for all stories that relate to the creating, deleting, editing and viewing of menus. This allows for regular users to view menus and for staff to manage them with a simple UI interface.
+
+**EPIC 5 - Bookings**
+
+The booking epic is for all stories that relate to creating, viewing, updating and deleting bookings. This allows the staff to easily view upcoming bookings, manage the bookings and also for customers to book and manage their own reservations.
+
+**EPIC 6 - Deployment Epic**
+
+This epic is for all stories related to deploying the app to heroku so that the site is live for staff and customer use.
+
+**EPIC 7 - Documentation**
+
+This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
