@@ -303,3 +303,7 @@ Implementation:
 All Bookings (Admin) page was added to the manage bookings and that is only visible to staff users. This will allow the staff members to easily perform view/edit/delete on the bookings made customer as well as admin.
 
 ![All Bookings (Admin)](docs/readme_images/admin_manageallbookings.webp)
+
+### Features Left To Implement
+- In a future release I would like to implement a page which displays a table map of the restaurant with information displayed on each table of upcoming bookings. This feature would allow staff to easily see if there are any upcoming bookings on the each table and plan accordingly. 
+- I will also like to add multiple menu pages.
