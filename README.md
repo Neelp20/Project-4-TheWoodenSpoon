@@ -200,3 +200,12 @@ A footer has been added to the bottom of the site, this contains a Twitter, Inst
 
 ![Footer](docs/readme_images/footer.webp)
 
+``USER STORY - As a Site Admin I can create or update the menu page content so that it is available on the site``
+
+Implementation:
+
+**Create Menu/Menu items Page**
+
+A create menu page was implemented to allow staff users to create new menus via the UI without having to use the backend admin panel. This will allow staff the ability to quickly update menu/menu items when they have made changes to the food being offered.
+
+![Create Menu](docs/readme_images/createmenuitem.webp)
