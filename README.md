@@ -345,6 +345,69 @@ Favicon
 - In a future release I would like to implement a page which displays a table map of the restaurant with information displayed on each table of upcoming bookings. This feature would allow staff to easily see if there are any upcoming bookings on the each table and plan accordingly. 
 - I will also like to add multiple menu pages.
 
+## The-Skeleton-Plane
+
+### Wireframes
+
+- Home page
+
+
+![Home Page](docs/wireframes/homepage_wireframes.png)
+
+- Signup page
+
+
+![Sign up Page](docs/wireframes/signup_wireframe.png)
+
+- Log in
+
+![Login Page](docs/wireframes/login_wireframe.png)
+
+- Log Out
+
+![Logout Page](docs/wireframes/logout_wireframe.png)
+
+- Create Booking
+
+![Create Booking](docs/wireframes/createbooking_wireframe.png)
+
+- Edit Booking 
+
+![Edit Booking](docs/wireframes/edit_booking_wireframe.png)
+
+- Upcoming Bookings
+
+![Upcoming Bookings](docs/wireframes/upcomingbooking_wireframe.png)
+
+- Delete Booking 
+
+![Delete Booking](docs/wireframes/deletebooking_wireframe.png)
+
+- Create Menu 
+
+![Create Menu](docs/wireframes/createmenu_wireframe.png)
+
+- Create Allergy Label
+
+![Create Allergy Label](docs/wireframes/createallergy_wireframe.png)
+
+- Edit Menu 
+
+![Edit Menu](docs/wireframes/editmenu_wireframe.png)
+
+- View Menu 
+
+![View Menu](docs/wireframes/menu_wireframe.png)
+
+
+- Manage Menus
+
+![Manage Menu](docs/wireframes/managemenu_wireframe.png)
+
+- Delete Menu 
+
+![Delete Menu](docs/wireframes/deletemenu_wireframe.png)
+
 ### Security
 
 Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any staff restricted functionality, user edit/delete functionality listed in the features was secured using this method.
