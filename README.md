@@ -447,6 +447,13 @@ The hero image was taken from Pexels which is a royalty free image site.
 - freeconvert.com
   - This was used to compress the images used in the website for optimal load times
 
+**Python Modules Used**
+
+* Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used for the classes to create, read, update and delete
+* Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and test user is authorized to perform actions
+* messages - Used to pass messages to the toasts to display feedback to the user upon actions
+* reverse_lazy - Used to define redirect URLs (like success_url) in class-based views without causing circular import issues.
+
 ## Deployment
 
 ### Version Control
