@@ -346,3 +346,43 @@ The hero image was taken from Pexels which is a royalty free image site.
   - This was used to download the logo in header 
 - freeconvert.com
   - This was used to compress the images used in the website for optimal load times
+
+## Deployment
+
+### Version Control
+
+The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘Gars-Steakhouse’.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
+
+```git push``` - This command was used to push all committed code to the remote repository on github.
+
+### Heroku Deployment
+
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+- Navigate to heroku and create an account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name
+- Select region and click create app
+- Click the resources tab and search for Heroku Postgres
+- Select hobby dev and continue
+- Go to the settings tab and then click reveal config vars
+- Add the following config vars:
+  - SECRET_KEY: (Your secret key)
+  - DATABASE_URL: (This should already exist with add on of postgres)
+  - CLOUNDINARY_URL: (cloudinary api url)
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repositoy you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click deploy
+
+The app should now be deployed.
+
+The live link can be found here: [Live Site](https://the-wooden-spoon-cfb803cde318.herokuapp.com/)
