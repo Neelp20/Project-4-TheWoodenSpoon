@@ -6,6 +6,37 @@ The live link can be found here: [Live Site - The Wooden Spoon](https://the-wood
 
 ![Mock Up](docs/readme_images/mockup.webp)
 
+## Table of Contents
+- [Sizzle and Steak](#sizzle-and-steak)
+  - [Table of Contents](#table-of-contents)
+- [User-Experience-Design](#user-experience-design)
+  - [The-Strategy-Plane](#the-strategy-plane)
+    - [Site-Goals](#site-goals)
+    - [Agile Planning](#agile-planning)
+      - [Epics](#epics)
+      - [User Stories](#user-stories)
+  - [The-Scope-Plane](#the-scope-plane)
+  - [The-Structure-Plane](#the-structure-plane)
+    - [Features](#features)
+    - [Features Left To Implement](#features-left-to-implement)
+  - [The-Skeleton-Plane](#the-skeleton-plane)
+    - [Wireframes](#wireframes)
+    - [Database-Design](#database-design)
+    - [Security](#security)
+  - [The-Surface-Plane](#the-surface-plane)
+    - [Design](#design)
+    - [Colour-Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery](#imagery)
+  - [Technolgies](#technolgies)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+    - [Version Control](#version-control)
+    - [Heroku Deployment](#heroku-deployment)
+    - [Run Locally](#run-locally)
+    - [Fork Project](#fork-project)
+  - [Credits](#credits)
+
 
 # User-Experience-Design
 
@@ -303,6 +334,12 @@ Implementation:
 All Bookings (Admin) page was added to the manage bookings and that is only visible to staff users. This will allow the staff members to easily perform view/edit/delete on the bookings made customer as well as admin.
 
 ![All Bookings (Admin)](docs/readme_images/admin_manageallbookings.webp)
+
+Favicon
+    * A site wide favicon was implemented.
+    * This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
+
+![Favicon](docs/readme_images/favicon.webp)
 
 ### Features Left To Implement
 - In a future release I would like to implement a page which displays a table map of the restaurant with information displayed on each table of upcoming bookings. This feature would allow staff to easily see if there are any upcoming bookings on the each table and plan accordingly. 
