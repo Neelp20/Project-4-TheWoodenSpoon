@@ -209,3 +209,13 @@ Implementation:
 A create menu page was implemented to allow staff users to create new menus via the UI without having to use the backend admin panel. This will allow staff the ability to quickly update menu/menu items when they have made changes to the food being offered.
 
 ![Create Menu](docs/readme_images/createmenuitem.webp)
+
+``USER STORY -As a user, I would like to be able to view menus so that I can decide if I would like to dine at the restaurant``
+
+Implementation:
+
+**View Menu Page**
+
+A menu page has been implemented to allow users to see the current active menus and decide whether they are interested in the food we offer before booking. This is visible to all users regardless of logged in state as it is not user friendly to restrict core information from users to force them into signing up.
+
+![View Menus](docs/readme_images/menupage.webp)
