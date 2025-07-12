@@ -190,3 +190,13 @@ Under the information section, the opening hours of the restaurant and address w
 
 ![About and Find Us](docs/readme_images/homepage1.webp)
 
+``USER STORY - As a developer, I need to create the footer with social media links so that the customer can follow us``
+
+Implementation:
+
+**Footer**
+
+A footer has been added to the bottom of the site, this contains a Twitter, Instagram and Facebook link so that users can follow the restaurant on social media if they want to keep up to date with special offers not advertised on the website. These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
+
+![Footer](docs/readme_images/footer.webp)
+
