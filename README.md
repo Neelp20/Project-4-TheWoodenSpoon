@@ -313,3 +313,9 @@ All Bookings (Admin) page was added to the manage bookings and that is only visi
 Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any staff restricted functionality, user edit/delete functionality listed in the features was secured using this method.
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+
+### Imagery
+
+The Website logo was downloaded from google free source and Header/Footer colour was choosen to match website logo.
+
+The hero image was taken from Pexels which is a royalty free image site.
