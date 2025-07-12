@@ -175,3 +175,18 @@ The navigation menu is displayed on all pages and drops down into a hamburger me
 ![Navbar](docs/readme_images/navbar1.webp)
 ![Navbar](docs/readme_images/navbar2.webp)
 ![Navbar](docs/readme_images/navbar3.webp)
+
+``USER STORY - As a restaurant owner, I would like a home page so that customers can view information on my restaurant``
+
+Implementation:
+
+**Home Page**
+
+The home page contains a hero image of a restaurant and the restaurant information at the top of the page. This will immediately make it evident to the user, what the purpose of the website is.
+
+Under the information section, the opening hours of the restaurant and address with contact details, which will allow the user to locate the restaurant and operating times. and there are two buttons, 'View Menu' and 'Reserve a table'. These buttons will allow the user a quick way to the respective pages if they wish to view menu or make a booking.
+
+![Hero Image](docs/readme_images/homepage.webp)
+
+![About and Find Us](docs/readme_images/homepage1.webp)
+
