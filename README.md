@@ -231,3 +231,75 @@ Implementation:
 On the manage menus page a button was added to allow staff members to edit a menu when changes need to be made.
 
 ![Edit Menu](docs/readme_images/managemenu_admin.webp)
+
+``USER-STORY - As a user, I would like to be able to create a new booking when I want to visit the restaurant``
+
+Implementation:
+
+**Create booking page**
+
+A booking page was implemented with a form that takes in the customer details and enables the user to easily make a booking through the UI. 
+
+Extensive logic was added to the form validation to ensure that not only is there a table available for the users chosen time and date but also that it has enough seats for the amount of guests. If the form is successful with validation on the front end, logic is in place to find the lowest capacity table to seat the guests for the given date and time.
+
+This allows for seat optimisation to ensure we do not have small amounts of guests at tables that could of been booked for larger groups. Ensuring table optimisation and revenue for the restaurant.
+
+![Create Booking](docs/readme_images/create_booking.webp)
+
+``USER-STORY - As a user, I would like to view my bookings when I need to check the information``
+
+``USER-STORY - As a user I would like to delete my booking when no longer require it``
+
+Implementation:
+
+**Upcoming bookings page**
+
+A upcoming bookings page was implemented with validation checks on the user. This shows all of the users bookings. This will allow the user to view their upcoming bookings when needed.
+
+For restaurant staff users, all bookings will be available to display so that staff can easily view numbers and future bookings.
+
+![Empty Upcoming Bookings](docs/readme_images/empty_upcomingbooking.webp)
+
+![Upcoming Bookings](docs/readme_images/upcoming_bookings1.webp)
+
+Implementation:
+
+**Edit Booking Page**
+
+``USER-STORY - As a user I would like to be able to edit a booking so that i can make changes when needed``
+
+On the manage bookings page an edit button is present that allows the user to direct to a form and update their booking when required. This will allow the user to easily manage their own booking.
+
+For staff users, they can also edit bookings from the All bookings (admin) page, even if they did not create the reservation. This will allow restaurant staff to ammend details as needed.
+
+![Edit Bookings](docs/readme_images/booking_edited.webp)
+
+Implementation:
+
+**Delete Booking**
+
+``USER-STORY - As a user I would like to delete my booking when no longer require it``
+
+![Delete Booking](docs/readme_images/sure_delete_booking.webp)
+
+![Post Delete Booking](docs/readme_images/afterdelete_booking.webp)
+
+``USER-STORY - As a staff user I want to be able to search a booking by name/date to save searching time``
+
+Implementation:
+
+**Searchbox**
+
+A search box was added to the manage bookings page that is only visible to staff users. This will allow the staff members to easily locate a booking by name/email or date if they need to find it quickly.
+
+![Search Boxes](docs/readme_images/search_bookings.webp)
+
+``USER-STORY - As a staff user, As a Staff User I would like to view/edit/manage customer's bookings so that Customer can get help from our side too``
+
+Implementation:
+
+**All Bookings(Admin)**
+
+All Bookings (Admin) page was added to the manage bookings and that is only visible to staff users. This will allow the staff members to easily perform view/edit/delete on the bookings made customer as well as admin.
+
+![All Bookings (Admin)](docs/readme_images/admin_manageallbookings.webp)
