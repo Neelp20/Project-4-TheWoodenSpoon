@@ -319,3 +319,30 @@ Environment variables were stored in an env.py for local development for securit
 The Website logo was downloaded from google free source and Header/Footer colour was choosen to match website logo.
 
 The hero image was taken from Pexels which is a royalty free image site.
+
+## Technolgies
+
+- HTML
+  - The structure of the Website was developed using HTML as the main language.
+- CSS
+  - The Website was styled using custom CSS in an external file.
+<!-- - JavaScript
+  - JavaScript was used to make the custom slider on the menu page change and the bootstrap date picker. -->
+- Python
+  - Python was the main programming language used for the application using the Django Framework.
+- Visual Studio Code
+  - The website was developed using Visual Studio Code IDE
+- GitHub
+  - Source code is hosted on GitHub
+- Git
+  - Used to commit and push code during the development of the Website
+- Font Awesome
+  - This was used for various icons throughout the site
+- Favicon.io
+  - favicon files were created at https://favicon.io/favicon-converter/
+- balsamiq
+  - wireframes were created using balsamiq from https://balsamiq.com/wireframes/desktop/#
+- Google
+  - This was used to download the logo in header 
+- freeconvert.com
+  - This was used to compress the images used in the website for optimal load times
