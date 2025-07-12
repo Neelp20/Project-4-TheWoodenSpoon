@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 if os.path.exists('env.py'):
     import env
+    # print("Loaded DATABASE_URL:", os.environ.get("DATABASE_URL"))
 
 
 # Quick-start development settings - unsuitable for production
