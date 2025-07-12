@@ -219,3 +219,13 @@ Implementation:
 A menu page has been implemented to allow users to see the current active menus and decide whether they are interested in the food we offer before booking. This is visible to all users regardless of logged in state as it is not user friendly to restrict core information from users to force them into signing up.
 
 ![View Menus](docs/readme_images/menupage.webp)
+
+``USER STORY -As a admin user I can edit the menu/menu items so that updated version will be available``
+
+Implementation:
+
+**Edit Menu Page**
+
+On the manage menus page a button was added to allow staff members to edit a menu when changes need to be made.
+
+![Edit Menu](docs/readme_images/managemenu_admin.webp)
