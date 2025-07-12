@@ -220,7 +220,9 @@ A menu page has been implemented to allow users to see the current active menus 
 
 ![View Menus](docs/readme_images/menupage.webp)
 
-``USER STORY -As a admin user I can edit the menu/menu items so that updated version will be available``
+``USER STORY - As a admin user I can edit the menu/menu items so that updated version will be available``
+
+`` USER STORY - As a staff user I can delete the menu/menu items so that Customer can view only what is available up to date``
 
 Implementation:
 
