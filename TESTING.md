@@ -284,6 +284,10 @@ Tests were performed on the create booking to ensure that:
 3. A customer cannot book for less than 24hrs.
 4. Forms cannot be submitted when required fields are empty
 
+## Unit Testing
+
+Due to time constraints, automated testing was not implemented. However, extensive manual testing was performed across key user journeys—such as booking reservations, navigating the menu, user authentication, and error handling—to ensure reliable functionality and smooth user experience.
+
 ## Accessibility
 
 [Wave Accessibility](https://wave.webaim.org/) tool was used throughout development and for final testing of the deployed website to check for any aid accessibility testing.
