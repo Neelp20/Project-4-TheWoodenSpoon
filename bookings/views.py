@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.db.models import Q
-from .models import Booking, Table
+from .models import Booking
 from .forms import BookingForm
 
 
@@ -122,5 +122,3 @@ class AdminBookingListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
             queryset = queryset.filter(date=date_filter)
 
         return queryset
-
-

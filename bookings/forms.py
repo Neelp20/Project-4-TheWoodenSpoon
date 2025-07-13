@@ -42,11 +42,14 @@ class BookingForm(forms.ModelForm):
         if not date or not time or not party_size:
             raise ValidationError("Please fill in all required fields.")
 
-        booking_datetime = datetime.combine(date, datetime.strptime(time, "%H:%M").time())
+        booking_datetime = datetime.combine(
+            date, datetime.strptime(time, "%H:%M").time())
         now_plus_24h = datetime.now() + timedelta(hours=24)
 
         if booking_datetime < now_plus_24h:
-            raise ValidationError("Bookings must be made at least 24 hours in advance.")
+            raise ValidationError(
+                "Bookings must be made at least 24 hours in advance."
+                )
 
         # Find tables that are large enough
         candidate_tables = Table.objects.filter(
@@ -61,7 +64,8 @@ class BookingForm(forms.ModelForm):
 
         if not candidate_tables.exists():
             raise ValidationError(
-                "No available tables for this party size and timeslot. Please call us to enquire."
+                "No available tables for this party size and timeslot."
+                "Please call us to enquire."
             )
 
         # attach the first available table so the view can save it

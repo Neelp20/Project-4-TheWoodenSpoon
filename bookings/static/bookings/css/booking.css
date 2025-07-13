@@ -176,7 +176,6 @@ ul.django-messages li.error {
  
 @media (min-width: 577px) and (max-width: 768px) {
   .booking-container {
-    /* flex-direction: column; */
     padding: 30px;
     gap: 30px;
   }

@@ -47,4 +47,5 @@ class Booking(models.Model):
         ordering = ("date", "time")
 
     def __str__(self):
-        return f"{self.name} | {self.date} {self.time} | Table {self.table.number}"
+        return f"{self.name} | {self.date} {self.time} | Table {
+            self.table.number}"
