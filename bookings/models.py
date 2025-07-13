@@ -11,7 +11,7 @@ class Table(models.Model):
 
     def __str__(self):
         return f"Table {self.number} (Seats: {self.capacity})"
- 
+
 
 class Booking(models.Model):
     """ Model to create a booking """
@@ -21,7 +21,7 @@ class Booking(models.Model):
         ('16:00', '16:00 - 17:45'),
         ('18:00', '18:00 - 19:45'),
         ('20:00', '20:00 - 21:45')
-        
+
     ]
     """Model to create bookings"""
     user = models.ForeignKey(User, on_delete=models.CASCADE)

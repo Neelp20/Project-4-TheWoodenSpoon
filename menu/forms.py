@@ -26,12 +26,12 @@ class MenuItemForm(forms.ModelForm):
             'description',
             'price',
             'allergy_labels'
-            
+
             ]
         widgets = {
             'allergy_labels': forms.CheckboxSelectMultiple
         }
-        
+
 
 class AllergyLabelsForm(forms.ModelForm):
     """

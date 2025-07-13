@@ -43,13 +43,13 @@ class BookingCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.instance.table = form.cleaned_data["table_obj"]
-    
+
         # Clear any existing messages before adding a new one
         storage = messages.get_messages(self.request)
         existing = [msg.message for msg in storage]
         if "Booking created successfully." not in existing:
             messages.success(self.request, "Booking created successfully.")
-        
+
         return super().form_valid(form)
 
 
@@ -58,7 +58,7 @@ class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     A view to provide a Form to the user
     to edit/update a booking
     """
-     
+
     model = Booking
     form_class = BookingForm
     template_name = "bookings/edit_booking.html"
@@ -69,7 +69,7 @@ class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         form.instance.table = form.cleaned_data["table_obj"]
         messages.success(self.request, "Booking updated successfully.")
         return super().form_valid(form)
-    
+
     def test_func(self):
         """ Test user is staff or allow only owner of the booking """
         if self.request.user.is_staff:
@@ -87,7 +87,7 @@ class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(request, "Booking cancelled successfully.")
         return super().delete(request, *args, **kwargs)
-    
+
     def test_func(self):
         """ Test user is staff or allow only owner of the booking """
         if self.request.user.is_staff:
@@ -123,7 +123,7 @@ class AdminBookingListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
         queryset = Booking.objects.filter(
             date__gte=date.today()
         ).order_by("date", "time")
-    
+
         search_query = self.request.GET.get("q")
         date_filter = self.request.GET.get("date")
 
