@@ -303,6 +303,9 @@ Testing was focused to ensure the following criteria were met:
 - Aria properties have been implemented correctly
 - WCAG 2.1 Coding best practices being followed
 
+## Validator Testing
+
+
 ## Lighthouse Report
 
 Lighthouse report showed areas for improvement on SEO and Best practices. Unfortunately I did not find a way to improve this.
