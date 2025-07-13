@@ -29,6 +29,7 @@ The live link can be found here: [Live Site - The Wooden Spoon](https://the-wood
   - [Technolgies](#technolgies)
   - [Testing](#testing)
   - [Deployment](#deployment)
+    - [Development Setup](#development-setup)
     - [Version Control](#version-control)
     - [Heroku Deployment](#heroku-deployment)
     - [Run Locally](#run-locally)
@@ -514,6 +515,20 @@ The hero image was taken from Pexels which is a royalty free image site.
 Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was moved due to the size of the file.
 
 ## Deployment
+
+### Development Setup
+
+This project uses a Python virtual environment located at `.venv`.
+
+#### Using VS Code (Recommended)
+- VS Code is configured to automatically use this environment via `.vscode/settings.json`.
+- If you open the project folder in VS Code, it will activate the environment automatically.
+
+#### Manual Setup (If Needed)
+
+If the environment doesn’t activate automatically, you can activate it manually by pasting it on terminal:
+.venv\Scripts\Activate.ps1
+
 
 ### Version Control
 
