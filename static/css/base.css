@@ -3,7 +3,7 @@
 :root {
     /* Fonts */
     --title: 'EB Garamond', serif;
-    --main-font: 'Roboto', serif
+    --main-font: 'Roboto', serif;
     
     /* Utils */
     --smal-box-shadow: 1px -1px 6px 0 #17191161;
