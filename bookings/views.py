@@ -10,6 +10,9 @@ from .forms import BookingForm
 
 # User Views
 class BookingListView(LoginRequiredMixin, ListView):
+    """
+    View to render ManageBookings
+    """
     model = Booking
     template_name = "bookings/manage_bookings.html"
     context_object_name = "bookings"
@@ -22,6 +25,10 @@ class BookingListView(LoginRequiredMixin, ListView):
 
 
 class BookingCreateView(LoginRequiredMixin, CreateView):
+    """
+    View to render createbookings
+    and allow user to create a booking
+    """
     model = Booking
     form_class = BookingForm
     template_name = "bookings/bookings.html"
@@ -47,6 +54,11 @@ class BookingCreateView(LoginRequiredMixin, CreateView):
 
 
 class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    A view to provide a Form to the user
+    to edit/update a booking
+    """
+     
     model = Booking
     form_class = BookingForm
     template_name = "bookings/edit_booking.html"
@@ -67,6 +79,7 @@ class BookingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ A view to delete a booking """
     model = Booking
     template_name = "bookings/confirm_delete_booking.html"
     success_url = reverse_lazy("manage-bookings")
@@ -84,6 +97,7 @@ class BookingDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class PastBookingListView(LoginRequiredMixin, ListView):
+    """ A view to see past bookings """
     model = Booking
     template_name = "bookings/past_bookings.html"
     context_object_name = "bookings"
@@ -97,6 +111,7 @@ class PastBookingListView(LoginRequiredMixin, ListView):
 
 # Admin views
 class AdminBookingListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
+    """ A view to manage admin booking list """
     model = Booking
     template_name = "bookings/admin_manage_bookings.html"
     context_object_name = "bookings"

@@ -34,6 +34,10 @@ class BookingForm(forms.ModelForm):
         self.fields['date'].widget.attrs['min'] = today.strftime('%Y-%m-%d')
 
     def clean(self):
+        """
+        Get form data and clean, check capacity and
+        throw errors when tables not available
+        """
         cleaned_data = super().clean()
         date = cleaned_data.get("date")
         time = cleaned_data.get("time")

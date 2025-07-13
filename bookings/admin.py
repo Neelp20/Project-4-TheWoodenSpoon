@@ -6,6 +6,7 @@ from .models import Table, Booking
 
 @admin.register(Table)
 class TableAdmin(admin.ModelAdmin):
+    """ Class to view Tables on admin panel"""
     list_display = (
         "number",
         "capacity"
@@ -18,6 +19,7 @@ class TableAdmin(admin.ModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
+    """ Class to view bookings on admin panel """
     list_display = (
         "name",
         "date",

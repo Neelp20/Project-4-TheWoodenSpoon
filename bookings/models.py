@@ -14,6 +14,7 @@ class Table(models.Model):
  
 
 class Booking(models.Model):
+    """ Model to create a booking """
     TIME_CHOICES = [
         ('12:00', '12:00 - 13:45'),
         ('14:00', '14:00 - 15:45'),
