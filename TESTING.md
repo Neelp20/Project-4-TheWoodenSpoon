@@ -311,9 +311,9 @@ Due to the django templating language code used in the HTML files, these could n
 
 ![HTML Validator](docs/testing/w3c_screenshot.png)
 
-All pages were run through the official [Pep8](http://pep8online.com/) validator to ensure all code was pep8 compliant. Some errors were shown due to no newline at end of file and missing white space after. All of these errors were resolved with the exception of the settings.py file.
+All pages were run through the official [Pep8ci](https://pep8ci.herokuapp.com/) validator to ensure all code was pep8 compliant. Some errors were shown due to no newline at end of file and missing white space after. All of these errors were resolved but still showing in validator.
 
-The django auto generated code for AUTH_PASSWORD_VALIDATORS were showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
+In settings.py file - The django auto generated code for AUTH_PASSWORD_VALIDATORS were showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
 
 ![PEP8ci](docs/testing/pep8ci_screenshot.png)
 
