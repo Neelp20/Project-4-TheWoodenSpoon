@@ -25,8 +25,6 @@ The live link can be found here: [Live Site - The Wooden Spoon](https://the-wood
     - [Security](#security)
   - [The-Surface-Plane](#the-surface-plane)
     - [Design](#design)
-    - [Colour-Scheme](#colour-scheme)
-    - [Typography](#typography)
     - [Imagery](#imagery)
   - [Technolgies](#technolgies)
   - [Testing](#testing)
