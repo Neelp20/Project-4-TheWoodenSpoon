@@ -286,7 +286,7 @@ Tests were performed on the create booking to ensure that:
 
 ## Unit Testing
 
-Due to time constraints, automated testing was not implemented. However, extensive manual testing was performed across key user journeys such as booking reservations, navigating the menu, user authentication, and error handling—to ensure reliable functionality and smooth user experience.
+Due to time constraints, automated testing was not implemented. However, extensive manual testing was performed across key user journeys such as booking reservations, navigating the menu, user authentication, and error handling to ensure reliable functionality and smooth user experience.
 
 ## Accessibility
 
