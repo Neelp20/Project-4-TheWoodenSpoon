@@ -446,8 +446,8 @@ The hero image was taken from Pexels which is a royalty free image site.
   - The structure of the Website was developed using HTML as the main language.
 - CSS
   - The Website was styled using custom CSS in an external file.
-<!-- - JavaScript
-  - JavaScript was used to make the custom slider on the menu page change and the bootstrap date picker. -->
+- JavaScript
+  - A touch of JavaScript was used for client-side input control to enhance form usability.
 - Python
   - Python was the main programming language used for the application using the Django Framework.
 - Visual Studio Code

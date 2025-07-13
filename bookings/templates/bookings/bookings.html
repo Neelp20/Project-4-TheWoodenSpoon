@@ -98,4 +98,13 @@
   {% endif %}
 </div>
 
-{%endblock%}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const dateField = document.querySelector("input[type='date']");
+    if (dateField) {
+      const today = new Date().toISOString().split('T')[0];
+      dateField.setAttribute("min", today);
+    }
+  });
+</script>
+{% endblock %}
