@@ -454,6 +454,41 @@ The hero image was taken from Pexels which is a royalty free image site.
 * messages - Used to pass messages to the toasts to display feedback to the user upon actions
 * reverse_lazy - Used to define redirect URLs (like success_url) in class-based views without causing circular import issues.
 
+**External Python Modules**
+
+* asgiref==3.8.1 - Used internally by Django to support asynchronous features
+* bleach==6.2.0 - HTML sanitizing library that cleans user-generated content; useful for rich text editors like Summernote
+* certifi==2025.6.15 - Used to secure HTTP requests by providing up-to-date SSL certificates
+* cffi==1.17.1 - Used for calling C code from Python - required by cryptography
+* charset-normalizer==3.4.2 - Used to detect and normalize text encoding; required by requests
+* cloudinary==1.36.0 - Cloundinary was set up for use but no custom uploads were made, settings remain for future development
+* crispy-bootstrap5==0.7 - This was used to allow bootstrap5 use with crispy forms
+* cryptography==45.0.4 - Installed as dependency with another package
+* defusedxml==0.7.1 - Installed as dependency with another package
+* dj-database-url==0.5.0 - Used to parse database url for production environment
+* dj3-cloudinary-storage==0.0.6 - Storage system to work with cloudinary
+* Django==4.2.23 - Framework used to build the application
+* django-allauth==0.57.0 - Used for the sites authentication system, sign up, sign in, logout, password resets ect.
+* django-crispy-forms==2.4 - Used to style the forms on render
+* django-summernote==0.8.20.0 - Used for menu page since its a integrated rich text editor for content creation
+* gunicorn==20.1.0 - Installed as dependency with another package
+* idna==3.10 - Installed as dependency with another package
+* oauthlib==3.3.1 - Installed as dependency with another package
+* psycopg2==2.9.10 - Needed for heroku deployment
+* pycparser==2.22 - Installed as dependency with another package
+* PyJWT==2.10.1 - Installed as dependency with another package
+* python3-openid==3.2.0 - Installed as dependency with another package
+* requests==2.32.4 - Installed as dependency with another package
+* requests-oauthlib==2.0.0 - Installed as dependency with another package (allauth authentication)
+* setuptools==80.9.0 - Used to manage Python packages and dependencies during builds or installations
+* six==1.17.0 - Installed as dependency with another package
+* sqlparse==0.5.3 - Installed as dependency with another package
+* tzdata==2025.2 - Installed as dependency with another package
+* urllib3==1.26.20 - Installed as dependency with another package
+* webencodings==0.5.1 - Required by bleach to handle web-safe text encoding formats
+* whitenoise==5.3.0 - Used to serve static files directly without use of static resource provider like cloundinary
+
+
 ## Deployment
 
 ### Version Control
