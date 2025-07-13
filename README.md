@@ -527,7 +527,7 @@ This project uses a Python virtual environment located at `.venv`.
 #### Manual Setup (If Needed)
 
 If the environment doesn’t activate automatically, you can activate it manually by pasting it on terminal:
-.venv\Scripts\Activate.ps1
+`.venv\Scripts\Activate.ps1`
 
 
 ### Version Control
