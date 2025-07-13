@@ -22,16 +22,3 @@ class MenuItemAdmin(SummernoteModelAdmin):
     list_display = ('title', 'category', 'price')
     filter_horizontal = ['allergy_labels']
     summernote_fields = ('description',)
-
-
-# class MenuItemAdmin(SummernoteModelAdmin):
-#     summernote_fields = ('description',)
-
-# admin.site.register(MenuItem, MenuItemAdmin)
-
-
-# @admin.register(AllergyLabel)
-# class AllergyLabelAdmin(admin.ModelAdmin):
-#     """Lists fields to display allergy labels"""
-#     list_display = ('name',)
-#     search_fields = ('name',)

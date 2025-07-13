@@ -11,7 +11,7 @@ from django.shortcuts import render
 
 
 def menu_view(request):
-    # return render(request, 'menu/menu.html')
+    """ Create menu view to create a menu if user is staff """
     items = MenuItem.objects.prefetch_related('allergy_labels')
     grouped_menu = {
         label: [item for item in items if item.category == key]
@@ -22,6 +22,7 @@ def menu_view(request):
 
 @method_decorator(staff_member_required, name='dispatch')
 class CreateMenuView(CreateView):
+    """ Create menu view to create a menu if user is staff """
     model = Menu
     form_class = MenuForm
     template_name = 'menu/create_menu.html'
@@ -34,6 +35,7 @@ class CreateMenuView(CreateView):
 
 @method_decorator(staff_member_required, name='dispatch')
 class CreateMenuItemsView(CreateView):
+    """ Create menu items view to create a menu items if user is staff """
     model = MenuItem
     form_class = MenuItemForm
     template_name = 'menu/create_menu_items.html'
@@ -44,10 +46,11 @@ class CreateMenuItemsView(CreateView):
         form.instance.allergy_labels.set(form.cleaned_data['allergy_labels'])
         messages.success(self.request, 'Item added to the menu successfully')
         return response
-    
+
 
 @method_decorator(staff_member_required, name='dispatch')
 class CreateAllergyLabelsView(CreateView):
+    """ Create allergy label view to create allergy label if user is staff """
     model = AllergyLabel
     form_class = AllergyLabelsForm
     template_name = 'menu/create_allergy_label.html'
@@ -60,6 +63,7 @@ class CreateAllergyLabelsView(CreateView):
 
 @method_decorator(staff_member_required, name='dispatch')
 class DeleteMenuItemView(DeleteView):
+    """ Delete menu item view to delete a menu item if user is staff """
     model = MenuItem
     template_name = 'menu/delete_menu_item.html'
     success_url = reverse_lazy('managemenus')
@@ -71,6 +75,7 @@ class DeleteMenuItemView(DeleteView):
 
 @method_decorator(staff_member_required, name='dispatch')
 class EditMenuItemView(UpdateView):
+    """ Edit menu item view to edit a menu item if user is staff """
     model = MenuItem
     form_class = MenuItemForm
     template_name = 'menu/edit_menu.html'
@@ -79,11 +84,11 @@ class EditMenuItemView(UpdateView):
     def form_valid(self, form):
         messages.success(self.request, 'Menu item updated successfully')
         return super().form_valid(form)
-    
+
 
 @method_decorator(staff_member_required, name='dispatch')
 class ManageMenuView(ListView):
-    """Manage menu view"""
+    """Manage menu item view to manage a menu item if user is staff"""
     model = MenuItem
     template_name = 'menu/manage_menu.html'
     context_object_name = 'menu_items'

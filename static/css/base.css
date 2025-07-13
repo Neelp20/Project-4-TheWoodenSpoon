@@ -40,9 +40,6 @@ footer a {
     font-size: 1.5rem;
 }
 
-/* footer a i:hover {
-    font-size: 2rem;
-} */
 
 /* Header */
 img.logo {
@@ -61,7 +58,6 @@ a.nav-link {
 
 /* homepage */
 .hero-image {
-    /* background-image: url('../images/hero-image.webp'); */
     background-image: url('/static/images/hero-image.webp');
     background-size: cover;
     background-position: center;
@@ -72,7 +68,6 @@ a.nav-link {
 
 .hero-image::before {
   content: "";
-  /* position: absolute; */
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: rgba(0, 0, 0, 0.1); /* Adjust darkness */

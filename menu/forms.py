@@ -3,6 +3,7 @@ from .models import Menu, MenuItem, AllergyLabel
 
 
 class MenuForm(forms.ModelForm):
+    """ Form to create menu"""
     class Meta:
         model = Menu
         fields = [
@@ -13,6 +14,9 @@ class MenuForm(forms.ModelForm):
 
 
 class MenuItemForm(forms.ModelForm):
+    """
+    Form to create menu items with checkboxes
+    """
     class Meta:
         model = MenuItem
         fields = [
@@ -30,6 +34,9 @@ class MenuItemForm(forms.ModelForm):
         
 
 class AllergyLabelsForm(forms.ModelForm):
+    """
+    Form to craete allergy labels
+    """
     class Meta:
         model = AllergyLabel
         fields = [

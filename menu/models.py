@@ -1,12 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-# from django_summernote.admin import SummernoteModelAdmin
-# from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
 
 class Menu(models.Model):
+    """ Model to create menu """
     name = models.CharField(max_length=50)
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     active = models.BooleanField(default=True)
@@ -19,17 +18,8 @@ class Menu(models.Model):
         return self.name
 
 
-# ALLERGY_LABELS = (
-#     ("contains dairy", "Contains Dairy"),
-#     ("contains nuts", "Contains Nuts"),
-#     ("vegetarian", "Vegetarian"),
-#     ("vegan", "Vegan"),
-#     ("gluten free", "Gluten Free")
-    
-# )
-
-
 class AllergyLabel(models.Model):
+    """ Model to create allergy labels """
     name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
