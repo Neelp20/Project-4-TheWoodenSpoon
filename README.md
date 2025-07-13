@@ -513,6 +513,7 @@ The hero image was taken from Pexels which is a royalty free image site.
 
 ## Testing
 
+Test cases and results can be found in the [TESTING.md](TESTING.md) file. This was moved due to the size of the file.
 
 ## Deployment
 
