@@ -35,6 +35,7 @@ The live link can be found here: [Live Site - The Wooden Spoon](https://the-wood
     - [Heroku Deployment](#heroku-deployment)
     - [Run Locally](#run-locally)
     - [Fork Project](#fork-project)
+  - [Media](#media)
   - [Credits](#credits)
 
 
@@ -408,11 +409,30 @@ Favicon
 
 ![Delete Menu](docs/wireframes/deletemenu_wireframe.png)
 
+### Database-Design
+
+The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the heart of the application as it is connected the the main booking and menu tables, linked by primary/foreign key relationships.
+
+One-to-Many: A user can make multiple bookings
+
+Many-to-Many: Menu items can have multiple allergy labels
+
+Foreign Keys: Used to link bookings to users and tables
+
+Authentication: Managed via Django’s built-in and Allauth models
+
+Entity relationship diagram was created using [DBeaver](https://dbeaver.io/download/) and shows the schemas for each of the models and how they are related.
+
+![Entity Relationship Diagram](docs/readme_images/erd.png)
+
 ### Security
 
 Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any staff restricted functionality, user edit/delete functionality listed in the features was secured using this method.
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+
+## The-Surface-Plane
+### Design
 
 ### Imagery
 
@@ -490,6 +510,8 @@ The hero image was taken from Pexels which is a royalty free image site.
 * urllib3==1.26.20 - Installed as dependency with another package
 * webencodings==0.5.1 - Required by bleach to handle web-safe text encoding formats
 * whitenoise==5.3.0 - Used to serve static files directly without use of static resource provider like cloundinary
+
+## Testing
 
 
 ## Deployment
