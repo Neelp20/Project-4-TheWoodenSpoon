@@ -19,7 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 if os.path.exists('env.py'):
     import env
-    # print("Loaded DATABASE_URL:", os.environ.get("DATABASE_URL"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +28,7 @@ if os.path.exists('env.py'):
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1',]
 
@@ -45,21 +44,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'django.contrib.sites',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    
-    # Apps
-    'home',
-    'menu',
-    'bookings',
-
-    # other
     'crispy_forms',
     'crispy_bootstrap5',
     'cloudinary',
     'cloudinary_storage',
+
+    # Apps
+    'home',
+    'menu',
+    'bookings',
+    
 ]
 
 SITE_ID = 1
@@ -149,10 +146,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# We are not using email verification in this project,
-# so this line informs Django not to expect it. 
-# Without this line, you would get Internal Server errors
-# (code 500) during login and registration. this line was in codestar blog
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Internationalization
@@ -183,7 +176,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SUMMERNOTE_CONFIG = {
-    # 'iframe': False,  # Use inline editor instead of iframe (helps with dark theme compatibility)
+
     'summernote': {
         'width': '100%',
         'height': '300px',
