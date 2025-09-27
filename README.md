@@ -7,7 +7,7 @@ The live link can be found here: [Live Site - The Wooden Spoon](https://the-wood
 ![Mock Up](docs/readme_images/mockup.webp)
 
 ## Table of Contents
-- [Sizzle and Steak](#sizzle-and-steak)
+- [The Wooden Spoon](#The-wooden-spoon)
   - [Table of Contents](#table-of-contents)
 - [User-Experience-Design](#user-experience-design)
   - [The-Strategy-Plane](#the-strategy-plane)
